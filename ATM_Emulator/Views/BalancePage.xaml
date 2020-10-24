@@ -1,0 +1,37 @@
+﻿<Page x:Class="ATM_Emulator.ViewModels.BalancePage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:ATM_Emulator.ViewModels"
+      xmlns:viewModels ="clr-namespace:ATM_Emulator.ViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="BalancePage">
+    <Page.DataContext>
+        <viewModels:BalancePageViewModel/>
+    </Page.DataContext>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.7*"/>
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+            <RowDefinition />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/fon.jpg"/>
+        </Grid.Background>
+        <WrapPanel Grid.Row="1" Grid.ColumnSpan="2" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <Label FontSize="20" FontWeight="ExtraBlack">БАЛАНС ПО КАРТЕ:</Label>
+            <TextBox Width="450" FontSize="20" FontWeight="ExtraBlack" Text="{Binding Amount, StringFormat= {}{0:C2}}" Padding="20,0,0,0" VerticalAlignment="Center" IsReadOnly="True" />
+        </WrapPanel>           
+        <Button Style="{StaticResource leftOrangeMenuButton}" Margin="0,10,60,5" Grid.Column="0" Grid.Row="4" Command="{Binding GoToPage}" CommandParameter="/Views/StartPage.xaml">
+            <TextBlock VerticalAlignment="Center" HorizontalAlignment="Center" Foreground="White" FontWeight="ExtraBold" FontSize="20">НАЗАД</TextBlock>
+        </Button>
+    </Grid>
+</Page>

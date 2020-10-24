@@ -1,0 +1,77 @@
+﻿<Page x:Class="ATM_Emulator.Views.StartPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008"    
+      xmlns:views ="clr-namespace:ATM_Emulator.Views"   
+      xmlns:root ="clr-namespace:ATM_Emulator" 
+      xmlns:viewModels ="clr-namespace:ATM_Emulator.ViewModels"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="StartPage">
+    <Page.DataContext>
+        <viewModels:StartPageViewModel/>        
+    </Page.DataContext>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>            
+        </Grid.RowDefinitions>
+        <Grid.Background>
+            <ImageBrush ImageSource="/img/fon.jpg"/>
+        </Grid.Background>
+        <Button Style="{StaticResource leftMenuButton}" Margin="0,30,60,0" Grid.Column="0" Grid.Row="0" Command="{Binding GoToPage}" CommandParameter="/Views/BalancePage.xaml">            
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/img/balans.png"/>
+                    <TextBlock VerticalAlignment="Center" Margin="5" Foreground="White" FontWeight="ExtraBold" FontSize="20">ЗАПРОСИТЬ<LineBreak/> БАЛАНС</TextBlock>
+                </StackPanel>                  
+            </Button.Content>            
+        </Button>
+        <Button Style="{StaticResource leftMenuButton}" Margin="0,15,60,15" Grid.Column="0" Grid.Row="1" Command="{Binding GoToPage}" CommandParameter="/Views/LKPage.xaml">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/img/lk.png" />
+                    <TextBlock VerticalAlignment="Center" Margin="5" Foreground="White" FontWeight="ExtraBold" FontSize="20" TextWrapping="Wrap">ЛИЧНЫЙ <LineBreak/>КАБИНЕТ</TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Style="{StaticResource leftMenuButton}" Margin="0,0,60,30" Grid.Column="0" Grid.Row="2" Command="{Binding ShowMessagePage}" CommandParameter="НЕТ ДОСТУПНЫХ БОНУСОВ">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal">
+                    <Image Source="/img/box.png"/>
+                    <TextBlock VerticalAlignment="Center" Margin="5" Foreground="White" FontWeight="ExtraBold" FontSize="20" TextWrapping="Wrap">БОНУСНАЯ <LineBreak/>ПРОГРАММА</TextBlock>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Style="{StaticResource rightMenuButton}" Margin="60,30,0,0" Grid.Column="1" Grid.Row="0" Command="{Binding GoToPage}" CommandParameter="/Views/PaymentPage.xaml">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Right" Margin="5" Foreground="White" FontWeight="ExtraBold" FontSize="20" TextWrapping="Wrap">ОПЛАТА <LineBreak/>СВЯЗИ</TextBlock>
+                    <Image Source="/img/phone.png"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Style="{StaticResource rightMenuButton}" Margin="60,15,0,15" Grid.Column="1" Grid.Row="1" Command="{Binding GoToPage}" CommandParameter="/Views/CashOutPage.xaml">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Right" Margin="5" Foreground="White" FontWeight="ExtraBold" FontSize="20" TextWrapping="Wrap">СНЯТЬ <LineBreak/>НАЛИЧНЫЕ</TextBlock>
+                    <Image Source="/img/outMoney.png"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+        <Button Style="{StaticResource rightMenuButton}" Margin="60,0,0,30" Grid.Column="1" Grid.Row="2" Command="{Binding GoToPage}" CommandParameter="/Views/CashInPage.xaml">
+            <Button.Content>
+                <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
+                    <TextBlock VerticalAlignment="Center" TextAlignment="Right" Margin="5" Foreground="White" FontWeight="ExtraBold" FontSize="20" TextWrapping="Wrap">ВНЕСТИ <LineBreak/>НАЛИЧНЫЕ</TextBlock>
+                    <Image Source="/img/inMoney.png"/>
+                </StackPanel>
+            </Button.Content>
+        </Button>
+    </Grid>    
+</Page>
