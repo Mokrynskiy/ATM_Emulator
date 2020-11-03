@@ -1,9 +1,6 @@
-﻿namespace ATM_Emulator.Models.DbModel
+﻿using System.Data.Entity;
+namespace ATM_Emulator.Models.DbModel
 {
-    using System;
-    using System.Data.Entity;
-    using System.Linq;
-
     public class AtmContext : DbContext
     {
         public AtmContext()

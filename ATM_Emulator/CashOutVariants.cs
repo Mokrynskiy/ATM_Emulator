@@ -3,8 +3,6 @@ using ATM_Emulator.Models.DbModel;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ATM_Emulator
 {
@@ -20,8 +18,7 @@ namespace ATM_Emulator
             int count = 0;
             
             foreach (var item in banknotesSorted)
-            {
-                
+            {                
                 if (item.Count > 0)
                     {
                     count = sum / item.NominalValue;

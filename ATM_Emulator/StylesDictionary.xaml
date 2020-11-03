@@ -327,7 +327,7 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="True">
-                            <Setter TargetName="border" Property="BorderBrush" Value="#FF4788c8" />
+                            <Setter TargetName="border" Property="BorderBrush" Value="Red" />
                             <Setter TargetName="border" Property="RenderTransform" >
                                 <Setter.Value>
                                     <TransformGroup>

@@ -1,11 +1,8 @@
 ﻿using ATM_Emulator.Models.DbModel;
 using DevExpress.Mvvm;
 using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Input;
 
 namespace ATM_Emulator.ViewModels

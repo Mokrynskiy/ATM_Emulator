@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ATM_Emulator.Models.DbModel
 {
@@ -12,7 +8,7 @@ namespace ATM_Emulator.Models.DbModel
     public class Account
     {
         [Key]
-        [Column("ID")]
+        [Column("ID")]        
         public int AccountId { get; set; }
         public string LastName { get; set; }
         public string FirstName { get; set; }
